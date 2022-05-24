@@ -1,41 +1,61 @@
 import React from 'react';
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
+  Heading,
   VStack,
-  Code,
-  Grid,
-  theme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import TodoList from './components/TodoList'
+import AddTodo from './components/AddTodo'
+import { useState, useEffect } from 'react'
+
 
 function App() {
+
+  const [todos, setTodos] = useState(
+    () => JSON.parse(localStorage.getItem('todos')) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos])
+
+  const addTodo = (todo) => {
+    setTodos([...todos, todo])
+  }
+
+  const toggleComplete = (id) => {
+    const newTodos = [...todos].map(todo =>{
+      if(todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo
+      })
+    setTodos(newTodos)
+  }
+
+
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter(todo => {
+      return todo.id !== id
+    })
+    setTodos(newTodos)
+  }
+
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
+  <div className='App'>
+    <VStack p={5}>
+    <ColorModeSwitcher alignSelf="flex-end" isRound='true' />
+          <Heading 
+          mb='5' 
+          fontWeight="bold" 
+          size="2xl" 
+          bgGradient="linear(to-r, green.500, orange.300, purple.500)"
+          bgClip='text'
+          >Chakra To-do App</Heading>
+          <AddTodo addTodo={addTodo}/>
+          <TodoList todos={ todos } deleteTodo={deleteTodo} toggleComplete={toggleComplete} />
           </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+          </div>
   );
 }
 
