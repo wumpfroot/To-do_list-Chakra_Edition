@@ -1,4 +1,4 @@
-import { HStack, VStack, Text, IconButton, StackDivider, Spacer, Badge, Checkbox } from '@chakra-ui/react'
+import { HStack, VStack, Text, IconButton, StackDivider, Spacer, Badge} from '@chakra-ui/react'
 import { FaTrashAlt } from 'react-icons/fa';
 import React from 'react'
 
