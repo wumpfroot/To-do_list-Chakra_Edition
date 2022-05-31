@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To-do List (Chakra UI)
+
+An improved version of my previous to-do list made using React. This time I added Chakra UI to my coding toolbox.
+It looks simple but good.
+
+- Built in dark mode
+- Added local storage!
+
+https://astounding-bombolone-02931f.netlify.app/
 
 ## Available Scripts
 
