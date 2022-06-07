@@ -1,7 +1,7 @@
 To-do List (Chakra UI)
 
 An improved version of my previous to-do list made using React. This time I added Chakra UI to my coding toolbox.
-It looks simple but good.
+Simple, but clean.
 
 - Built in dark mode
 - Added local storage!
