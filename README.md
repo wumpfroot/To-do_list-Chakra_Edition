@@ -6,9 +6,8 @@ Simple, but clean.
 - Built in dark mode
 - Added local storage!
 
+App link:
 https://astounding-bombolone-02931f.netlify.app/
-
-%md <a href="https://astounding-bombolone-02931f.netlify.app/" target="_blank">Netlify Link</a>
 
 ## Available Scripts
 
