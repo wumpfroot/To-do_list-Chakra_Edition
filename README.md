@@ -8,6 +8,8 @@ Simple, but clean.
 
 https://astounding-bombolone-02931f.netlify.app/
 
+%md <a href="https://astounding-bombolone-02931f.netlify.app/" target="_blank">Netlify Link</a>
+
 ## Available Scripts
 
 In the project directory, you can run:
